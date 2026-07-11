@@ -201,6 +201,52 @@
         }
         .form-section h2 {
             margin-top: 0;
+            margin-bottom: 8px;
+        }
+        .form-subtitle {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin: 0 0 28px 0;
+        }
+        .form-privacy {
+            margin-top: 14px;
+            font-size: 0.8125rem;
+            color: #94a3b8;
+            text-align: center;
+        }
+        .form-success,
+        .form-error {
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 32px 24px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .form-success {
+            background: #f0fff4;
+            border: 1px solid #9ae6b4;
+            color: #276749;
+        }
+        .form-success h3 {
+            margin: 0 0 8px 0;
+            color: #22543d;
+            font-size: 1.25rem;
+        }
+        .form-success p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        .form-error {
+            background: #fff5f5;
+            border: 1px solid #feb2b2;
+            color: #c53030;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+        .luxury-form button.action-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
         }
         .luxury-form {
             max-width: 520px;
@@ -411,31 +457,41 @@
         </section>
 
         <section class="form-section">
-            <h2>Apply for Pre-Qualification</h2>
-            <form action="https://formspree.io/f/mdarrdkk" method="POST" class="luxury-form">
+            <h2>Get Started</h2>
+            <p class="form-subtitle">Takes less than a minute. No obligation.</p>
 
-                <label for="full-name">Full Name</label>
-                <input type="text" id="full-name" name="full-name" required>
+            <div id="form-success" class="form-success" hidden>
+                <h3>You're all set!</h3>
+                <p>Thanks for reaching out. We'll be in touch shortly to discuss your options.</p>
+            </div>
 
-                <label for="phone">Telephone Number</label>
-                <input type="tel" id="phone" name="phone" required>
+            <form id="contact-form" action="https://formspree.io/f/mdarrdkk" method="POST" class="luxury-form">
 
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
+                <div id="form-error" class="form-error" hidden>
+                    Something went wrong. Please try again or call us at (785) 496-4322.
+                </div>
 
-                <label for="job-title">Job Title</label>
-                <input type="text" id="job-title" name="job-title">
+                <label for="full-name">Your Name</label>
+                <input type="text" id="full-name" name="full-name" placeholder="Jane Smith" required autocomplete="name">
 
-                <label for="credit-score">Credit Score Range</label>
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(785) 555-1234" required autocomplete="tel">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@email.com" required autocomplete="email">
+
+                <label for="credit-score">Credit Score Range <span style="font-weight: 400; color: #94a3b8;">(optional)</span></label>
                 <select id="credit-score" name="credit-score">
+                    <option value="">Select a range</option>
                     <option value="<500">&lt; 500</option>
-                    <option value="500-599">500-599</option>
-                    <option value="600-699">600-699</option>
-                    <option value="700-799">700-799</option>
+                    <option value="500-599">500–599</option>
+                    <option value="600-699">600–699</option>
+                    <option value="700-799">700–799</option>
                     <option value="800+">800+</option>
                 </select>
 
-                <button type="submit" class="action-button">Submit Application</button>
+                <button type="submit" class="action-button">Get Started</button>
+                <p class="form-privacy">Your info stays private. We'll only use it to follow up about this home.</p>
             </form>
         </section>
 
@@ -479,6 +535,42 @@
         </footer>
 
     </div>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const button = form.querySelector('button[type="submit"]');
+            const errorEl = document.getElementById('form-error');
+            const successEl = document.getElementById('form-success');
+            const subtitle = document.querySelector('.form-subtitle');
+
+            errorEl.hidden = true;
+            button.disabled = true;
+            button.textContent = 'Sending…';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    form.hidden = true;
+                    if (subtitle) subtitle.hidden = true;
+                    successEl.hidden = false;
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch {
+                errorEl.hidden = false;
+                button.disabled = false;
+                button.textContent = 'Get Started';
+            }
+        });
+    </script>
 
 </body>
 </html>
