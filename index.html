@@ -59,23 +59,42 @@
             margin-bottom: 64px;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
         }
-        .how-it-works h3 {
+        .how-it-works > h2 {
             color: #1a365d;
-            margin: 0 0 1rem 0;
-            font-size: 1.25rem;
+            margin: 0 0 8px 0;
+            font-size: 1.5rem;
+            text-align: center;
         }
-        .how-it-works ul {
-            margin: 0;
-            padding-left: 1.25rem;
-            color: #4a5568;
+        .how-it-works-lead {
+            text-align: center;
+            color: #64748b;
             font-size: 1rem;
+            margin: 0 0 40px 0;
         }
-        .how-it-works li {
-            margin-bottom: 0.75rem;
+        .process-step {
+            padding: 32px 0;
+            border-top: 1px solid #e2e8f0;
+        }
+        .process-step:first-of-type {
+            border-top: none;
+            padding-top: 0;
+        }
+        .process-step:last-of-type {
+            padding-bottom: 0;
+        }
+        .process-step h3 {
+            margin: 0 0 8px 0;
+            color: #1a365d;
+            font-size: 1.125rem;
+        }
+        .process-step > p {
+            font-size: 1rem;
+            color: #4a5568;
+            margin: 0 0 16px 0;
             line-height: 1.65;
         }
-        .how-it-works li:last-child {
-            margin-bottom: 0;
+        .process-step .action-button {
+            max-width: 320px;
         }
 
         /* ── Top Navigation Bar ── */
@@ -239,24 +258,11 @@
             font-size: 1rem;
         }
 
-        /* ── Form / Qualification Section ── */
-        .form-section {
-            background: #ffffff;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            border-radius: 16px;
-            padding: 48px;
-            margin: 30px 0;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-            text-align: center;
-        }
-        .form-section h2 {
-            margin-top: 0;
-            margin-bottom: 8px;
-        }
+        /* ── Form (inside How It Works Step 1) ── */
         .form-subtitle {
-            color: #64748b;
+            color: #4a5568;
             font-size: 1rem;
-            margin: 0 0 28px 0;
+            margin: 0 0 20px 0;
         }
         .form-privacy {
             margin-top: 14px;
@@ -300,7 +306,7 @@
         }
         .luxury-form {
             max-width: 520px;
-            margin: 0 auto;
+            margin: 0;
             text-align: left;
         }
         .luxury-form label {
@@ -341,61 +347,7 @@
             font-family: inherit;
         }
 
-        /* ── Action Steps Area ── */
-        .action-steps {
-            background: linear-gradient(180deg, #eef2f7 0%, #e8edf4 100%);
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            border-radius: 16px;
-            padding: 56px 48px;
-            text-align: center;
-            margin-bottom: 16px;
-        }
-        .action-steps h2 {
-            color: #1a365d;
-            margin-top: 0;
-            margin-bottom: 40px;
-            font-size: 1.5rem;
-        }
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-        }
-        .step-card {
-            background: #ffffff;
-            padding: 36px 32px;
-            border-radius: 12px;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-        .step-card:hover {
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.09);
-            transform: translateY(-2px);
-        }
-        .step-number {
-            font-size: 0.8125rem;
-            font-weight: 700;
-            color: #2b6cb0;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            margin-bottom: 12px;
-        }
-        .step-card h3 {
-            margin: 0 0 12px 0;
-            color: #1a365d;
-            font-size: 1.125rem;
-        }
-        .step-card p {
-            font-size: 1rem;
-            color: #4a5568;
-            text-align: left;
-            margin: 0 0 16px 0;
-            line-height: 1.65;
-        }
+        /* ── Step Cards (calculator cheat sheet) ── */
         .cheat-sheet {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
@@ -403,6 +355,7 @@
             padding: 16px;
             margin-bottom: 20px;
             text-align: left;
+            max-width: 520px;
         }
         .cheat-sheet-title {
             font-size: 0.875rem;
@@ -429,8 +382,16 @@
             font-weight: 600;
             color: #1a202c;
         }
+        .step-number {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            color: #2b6cb0;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 12px;
+        }
         .action-button {
-            display: block;
+            display: inline-block;
             background-color: #2b6cb0;
             color: #ffffff;
             padding: 16px 24px;
@@ -439,7 +400,6 @@
             font-weight: 600;
             font-size: 0.95rem;
             border-radius: 8px;
-            margin-top: auto;
             letter-spacing: 0.02em;
             transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
         }
@@ -484,9 +444,7 @@
             }
             .product-section,
             .info-block,
-            .how-it-works,
-            .form-section,
-            .action-steps {
+            .how-it-works {
                 padding: 32px 24px;
             }
         }
@@ -540,16 +498,6 @@
             </ul>
         </section>
 
-        <section class="how-it-works">
-            <h3>How It Works</h3>
-            <ul>
-                <li>Choose your home.</li>
-                <li>Use our payment calculator to estimate potential monthly payments.</li>
-                <li>Submit a financing application with an independent lender to explore available financing options.</li>
-                <li>If approved, purchase your home and lease your homesite from the community.</li>
-            </ul>
-        </section>
-
         <!-- Core Financial / Informational Content -->
         <section class="info-block">
             <h3>Value & Specifications</h3>
@@ -566,82 +514,74 @@
             </ul>
         </section>
 
-        <section class="form-section">
-            <h2>Get Started</h2>
-            <p class="form-subtitle">Takes less than a minute. No obligation.</p>
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <p class="how-it-works-lead">As easy as 1-2-3.</p>
 
-            <div id="form-success" class="form-success" hidden>
-                <h3>You're all set!</h3>
-                <p>Thanks for reaching out. We'll be in touch shortly to discuss your options.</p>
+            <div class="process-step">
+                <div class="step-number">Step 1</div>
+                <h3>Get Started</h3>
+                <p class="form-subtitle">Start here — tell us how to reach you. Takes less than a minute. No obligation.</p>
+
+                <div id="form-success" class="form-success" hidden>
+                    <h3>You're all set!</h3>
+                    <p>Thanks for reaching out. We'll be in touch shortly to discuss your options.</p>
+                </div>
+
+                <form id="contact-form" action="https://formspree.io/f/mdarrdkk" method="POST" class="luxury-form">
+                    <div id="form-error" class="form-error" hidden>
+                        Something went wrong. Please try again or call us at (785) 496-4322.
+                    </div>
+
+                    <label for="full-name">Your Name</label>
+                    <input type="text" id="full-name" name="full-name" placeholder="Jane Smith" required autocomplete="name">
+
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(785) 555-1234" required autocomplete="tel">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@email.com" required autocomplete="email">
+
+                    <label for="credit-score">Credit Score Range <span style="font-weight: 400; color: #94a3b8;">(optional)</span></label>
+                    <select id="credit-score" name="credit-score">
+                        <option value="">Select a range</option>
+                        <option value="<500">&lt; 500</option>
+                        <option value="500-599">500–599</option>
+                        <option value="600-699">600–699</option>
+                        <option value="700-799">700–799</option>
+                        <option value="800+">800+</option>
+                    </select>
+
+                    <button type="submit" class="action-button">Get Started</button>
+                    <p class="form-privacy">Your info stays private. We'll only use it to follow up about this home.</p>
+                </form>
             </div>
 
-            <form id="contact-form" action="https://formspree.io/f/mdarrdkk" method="POST" class="luxury-form">
+            <div class="process-step">
+                <div class="step-number">Step 2</div>
+                <h3>Estimate Your Payments</h3>
+                <p>Use our payment calculator to estimate potential monthly payments.</p>
 
-                <div id="form-error" class="form-error" hidden>
-                    Something went wrong. Please try again or call us at (785) 496-4322.
+                <div class="cheat-sheet">
+                    <p class="cheat-sheet-title">Calculator Cheat Sheet</p>
+                    <dl>
+                        <dt>What is the purchase price?</dt>
+                        <dd>$44,999</dd>
+                        <dt>What type of home?</dt>
+                        <dd>A new home</dd>
+                        <dt>Where is your home going?</dt>
+                        <dd>66608</dd>
+                    </dl>
                 </div>
+                <a href="https://www.21stmortgage.com/web/payment-estimator.nsf/c1.html" target="_blank" class="action-button">Estimate Payments</a>
+            </div>
 
-                <label for="full-name">Your Name</label>
-                <input type="text" id="full-name" name="full-name" placeholder="Jane Smith" required autocomplete="name">
-
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="(785) 555-1234" required autocomplete="tel">
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="you@email.com" required autocomplete="email">
-
-                <label for="credit-score">Credit Score Range <span style="font-weight: 400; color: #94a3b8;">(optional)</span></label>
-                <select id="credit-score" name="credit-score">
-                    <option value="">Select a range</option>
-                    <option value="<500">&lt; 500</option>
-                    <option value="500-599">500–599</option>
-                    <option value="600-699">600–699</option>
-                    <option value="700-799">700–799</option>
-                    <option value="800+">800+</option>
-                </select>
-
-                <button type="submit" class="action-button">Get Started</button>
-                <p class="form-privacy">Your info stays private. We'll only use it to follow up about this home.</p>
-            </form>
-        </section>
-
-        <!-- The Clean Step 1 / Step 2 Interface -->
-        <section class="action-steps">
-            <h2>Financing & Next Steps</h2>
-            <div class="steps-grid">
-                
-                <!-- Step 1 Card -->
-                <div class="step-card">
-                    <div>
-                        <div class="step-number">Step 1</div>
-                        <h3>Payment Estimator</h3>
-                        <p>Use the calculator to estimate your monthly loan payment. Estimates exclude lot rent, taxes, and insurance.</p>
-
-                        <div class="cheat-sheet">
-                            <p class="cheat-sheet-title">Calculator Cheat Sheet</p>
-                            <dl>
-                                <dt>What is the purchase price?</dt>
-                                <dd>$44,999</dd>
-                                <dt>What type of home?</dt>
-                                <dd>A new home</dd>
-                                <dt>Where is your home going?</dt>
-                                <dd>66608</dd>
-                            </dl>
-                        </div>
-                    </div>
-                    <a href="https://www.21stmortgage.com/web/payment-estimator.nsf/c1.html" target="_blank" class="action-button">Estimate Payments</a>
-                </div>
-
-                <!-- Step 2 Card -->
-                <div class="step-card">
-                    <div>
-                        <div class="step-number">Step 2</div>
-                        <h3>Financing Application</h3>
-                        <p>Submit your pre-qualification application directly to 21st Mortgage (NMLS #2280). Programs cater to diverse credit profiles, including low down-payment options for qualified applicants.</p>
-                    </div>
-                    <a href="https://apply.21stmortgage.com/?sretId=3897-701" target="_blank" class="action-button">Apply For Financing</a>
-                </div>
-
+            <div class="process-step">
+                <div class="step-number">Step 3</div>
+                <h3>Apply for Financing</h3>
+                <p>Submit a financing application with an independent lender to explore available financing options.</p>
+                <p>If approved, purchase your home and lease your homesite from the community.</p>
+                <a href="https://apply.21stmortgage.com/?sretId=3897-701" target="_blank" class="action-button">Apply For Financing</a>
             </div>
         </section>
 
