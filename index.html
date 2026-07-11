@@ -10,6 +10,7 @@
         /* ── Luxury Real Estate Foundation ── */
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            font-size: 1rem;
             line-height: 1.7;
             color: #2d3748;
             background-color: #f4f6f9;
@@ -26,9 +27,29 @@
         }
 
         h2 {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
             color: #1a202c;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-text {
+            color: #4a5568;
+            font-size: 1rem;
+            margin: 0 0 1.25rem 0;
+        }
+
+        .location-callout {
+            background: #f8fafc;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 0 0 1.5rem 0;
+            font-size: 1rem;
+            color: #4a5568;
+            line-height: 1.65;
+        }
+        .location-callout strong {
+            color: #1a365d;
         }
 
         /* ── Top Navigation Bar ── */
@@ -136,13 +157,6 @@
             margin-bottom: 64px;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
         }
-        .price-tag {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #1a365d;
-            margin-bottom: 24px;
-            letter-spacing: -0.02em;
-        }
         .spec-list {
             list-style: none;
             padding: 0;
@@ -153,10 +167,10 @@
         }
         .spec-list li {
             background: #ffffff;
-            padding: 24px 20px;
+            padding: 20px 16px;
             border-radius: 12px;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: #2d3748;
             text-align: center;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
@@ -169,13 +183,13 @@
         }
         .features-heading {
             color: #1a365d;
-            font-size: 1.375rem;
+            font-size: 1.25rem;
             margin: 48px 0 12px 0;
         }
         .features-lead {
             color: #4a5568;
             margin: 0 0 8px 0;
-            font-size: 0.975rem;
+            font-size: 1rem;
         }
 
         /* ── Informational Text Block ── */
@@ -190,13 +204,13 @@
         .info-block h3 {
             color: #1a365d;
             margin-top: 0;
-            font-size: 1.375rem;
-            margin-bottom: 1.25rem;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
         }
         .info-block p,
         .info-block li {
             color: #4a5568;
-            font-size: 0.975rem;
+            font-size: 1rem;
         }
 
         /* ── Form / Qualification Section ── */
@@ -215,7 +229,7 @@
         }
         .form-subtitle {
             color: #64748b;
-            font-size: 0.95rem;
+            font-size: 1rem;
             margin: 0 0 28px 0;
         }
         .form-privacy {
@@ -314,7 +328,7 @@
             color: #1a365d;
             margin-top: 0;
             margin-bottom: 40px;
-            font-size: 1.75rem;
+            font-size: 1.5rem;
         }
         .steps-grid {
             display: grid;
@@ -337,7 +351,7 @@
             transform: translateY(-2px);
         }
         .step-number {
-            font-size: 0.75rem;
+            font-size: 0.8125rem;
             font-weight: 700;
             color: #2b6cb0;
             text-transform: uppercase;
@@ -345,9 +359,49 @@
             margin-bottom: 12px;
         }
         .step-card h3 {
-            margin: 0 0 16px 0;
+            margin: 0 0 12px 0;
             color: #1a365d;
-            font-size: 1.25rem;
+            font-size: 1.125rem;
+        }
+        .step-card p {
+            font-size: 1rem;
+            color: #4a5568;
+            text-align: left;
+            margin: 0 0 16px 0;
+            line-height: 1.65;
+        }
+        .cheat-sheet {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .cheat-sheet-title {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin: 0 0 12px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .cheat-sheet dl {
+            margin: 0;
+        }
+        .cheat-sheet dt {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-top: 10px;
+        }
+        .cheat-sheet dt:first-child {
+            margin-top: 0;
+        }
+        .cheat-sheet dd {
+            margin: 4px 0 0 0;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a202c;
         }
         .action-button {
             display: block;
@@ -379,7 +433,7 @@
             border-top: 1px solid rgba(0, 0, 0, 0.08);
             padding-top: 40px;
             text-align: center;
-            font-size: 0.8125rem;
+            font-size: 0.875rem;
             color: #94a3b8;
             line-height: 1.8;
         }
@@ -433,8 +487,9 @@
         <!-- Product Highlight -->
         <section class="product-section">
             <h2>Discover Your New Home</h2>
-            <div class="price-tag">$44,999</div>
-            <p>Own a brand-new home for less than many renters expect. Get the space that traditional apartments do not offer: your own stand-alone home, your own private yard, and a pet-friendly community with outdoor green space.</p>
+            <p class="section-text">Own a brand-new home for less than many renters expect. Get the space that traditional apartments do not offer: your own stand-alone home, your own private yard, and a pet-friendly community with outdoor green space.</p>
+
+            <p class="location-callout"><strong>Convenient Location</strong> — Casey's, McDonald's, Chipotle, Burger King, Taco Bell, Kaw Valley Bank, Silver Lake Bank, and the U.S. Post Office are all within walking distance.</p>
             
             <ul class="spec-list">
                 <li>3 Bedrooms</li>
@@ -456,10 +511,6 @@
                 <li>Washer/Dryer Hookups</li>
                 <li>All-Electric Home</li>
             </ul>
-
-            <p style="background: #ebf8ff; padding: 15px; border-left: 4px solid #3182ce; margin-top: 20px;">
-                <strong>Special Incentive:</strong> 3 months of free lot rent included with the purchase of a new home ($1,650 total value).
-            </p>
         </section>
 
         <!-- Core Financial / Informational Content -->
@@ -470,6 +521,7 @@
             
             <p><strong>Fixed Monthly Costs & Community Guidelines:</strong></p>
             <ul>
+                <li><strong>Home Price:</strong> $44,999</li>
                 <li><strong>Lot Rent:</strong> $550/month (independent of home financing structures).</li>
                 <li><strong>Lease Configuration:</strong> Flexible Month-to-Month lot tenancy.</li>
                 <li><strong>Community Admission:</strong> Residency status remains strictly contingent upon standard background screening and park application approval.</li>
@@ -526,9 +578,19 @@
                     <div>
                         <div class="step-number">Step 1</div>
                         <h3>Payment Estimator</h3>
-                        <p style="font-size: 14px; color: #4a5568; text-align: left; margin-bottom: 20px;">
-                            Utilize the standard calculator to evaluate potential monthly loan installments based on your target financing profile. Note: Estimates exclude separate lot costs, local taxes, or active insurance policies.
-                        </p>
+                        <p>Use the calculator to estimate your monthly loan payment. Estimates exclude lot rent, taxes, and insurance.</p>
+
+                        <div class="cheat-sheet">
+                            <p class="cheat-sheet-title">Calculator Cheat Sheet</p>
+                            <dl>
+                                <dt>What is the purchase price?</dt>
+                                <dd>$44,999</dd>
+                                <dt>What type of home?</dt>
+                                <dd>A new home</dd>
+                                <dt>Where is your home going?</dt>
+                                <dd>66608</dd>
+                            </dl>
+                        </div>
                     </div>
                     <a href="https://www.21stmortgage.com/web/payment-estimator.nsf/c1.html" target="_blank" class="action-button">Estimate Payments</a>
                 </div>
@@ -538,9 +600,7 @@
                     <div>
                         <div class="step-number">Step 2</div>
                         <h3>Financing Application</h3>
-                        <p style="font-size: 14px; color: #4a5568; text-align: left; margin-bottom: 20px;">
-                            Submit your formal pre-qualification application directly to 21st Mortgage (NMLS #2280). Programs cater to diverse credit profiles, including low down-payment options for qualified applicants.
-                        </p>
+                        <p>Submit your pre-qualification application directly to 21st Mortgage (NMLS #2280). Programs cater to diverse credit profiles, including low down-payment options for qualified applicants.</p>
                     </div>
                     <a href="https://apply.21stmortgage.com/?sretId=3897-701" target="_blank" class="action-button">Apply For Financing</a>
                 </div>
