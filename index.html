@@ -3,123 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regis MHC | Modern Manufactured Living</title>
+    <title>Regis MHC | Manufactured Home Community</title>
     <style>
-        /* Modern, Clean Luxury Styling */
+        /* Professional Corporate Real Estate Styling */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            background-color: #f9f7f2; /* Cream/Off-White */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: #2d3748; /* Dark Charcoal */
+            background-color: #f7fafc; /* Crisp Light Gray */
             margin: 0;
             padding: 0;
         }
-        h1, h2, h3 { font-family: 'Georgia', serif; color: #1a1a1a; }
-        
-        .hero {
-            background: linear-gradient(135deg, #a8c0a0, #87b0a0); /* Sky and Grass vibe */
-            color: white;
-            padding: 100px 20px;
+
+        /* Top Navigation Bar */
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 2px solid #e2e8f0;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1a365d; /* Corporate Navy */
+            letter-spacing: 0.5px;
+        }
+        .nav-contact {
+            font-size: 14px;
+            color: #4a5568;
+            font-weight: 600;
+            text-align: right;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero / Header Banner */
+        .hero-banner {
+            background-color: #1a365d; /* Solid Navy */
+            color: #ffffff;
+            padding: 40px;
+            border-radius: 6px;
+            margin-bottom: 40px;
+        }
+        .hero-banner h1 {
+            margin: 0 0 10px 0;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        .hero-banner p {
+            margin: 0;
+            font-size: 18px;
+            color: #e2e8f0;
+        }
+
+        /* Product Showcase Grid */
+        .product-section {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        .price-tag {
+            font-size: 36px;
+            font-weight: 800;
+            color: #2b6cb0; /* Accent Blue */
+            margin-bottom: 20px;
+        }
+        .spec-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .spec-list li {
+            background: #f7fafc;
+            padding: 12px;
+            border-left: 4px solid #2b6cb0;
+            font-weight: 600;
+        }
+
+        /* Informational Text Block (The 'Blog' Data) */
+        .info-block {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        .info-block h3 {
+            color: #1a365d;
+            margin-top: 0;
+        }
+
+        /* Form / Qualification Section */
+        .form-section {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* Clear Next Steps Action Area */
+        .action-steps {
+            background: #edf2f7;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            padding: 40px;
             text-align: center;
         }
-        
-        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: #3a5a40; /* Muted Sage */
-            color: white;
-            padding: 15px 30px;
+        .action-steps h2 {
+            color: #1a365d;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .step-card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .step-number {
+            font-size: 14px;
+            font-weight: 800;
+            color: #2b6cb0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        .step-card h3 {
+            margin: 0 0 15px 0;
+            color: #1a365d;
+        }
+        .action-button {
+            display: block;
+            background-color: #2b6cb0;
+            color: #ffffff;
+            padding: 14px;
+            text-align: center;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin: 10px 0;
+            font-weight: 700;
+            border-radius: 4px;
+            margin-top: auto;
+            transition: background 0.2s;
+        }
+        .action-button:hover {
+            background-color: #2c5282;
         }
 
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 40px 0;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 30px;
+            text-align: center;
+            font-size: 13px;
+            color: #718096;
         }
-        .comparison-table th, .comparison-table td {
-            padding: 20px;
-            border-bottom: 1px solid #eee;
-            text-align: left;
-        }
-        .comparison-table th { background-color: #f4f4f4; }
-
-        footer { text-align: center; padding: 40px; font-size: 0.9em; color: #666; }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <h1>REGIS MHC</h1>
-        <p>Your own home. Your own yard. Your own space.</p>
-    </header>
+    <!-- Upper Left Logo Bar -->
+    <nav class="navbar">
+        <div class="logo">REGIS MHC</div>
+        <div class="nav-contact">
+            Phone/Text: (785) 496-4322<br>
+            Email: info@regismhc.com
+        </div>
+    </nav>
 
     <div class="container">
-        <!-- Introduction -->
-        <section>
+
+        <!-- Banner Context -->
+        <header class="hero-banner">
+            <h1>Modern Manufactured Housing</h1>
+            <p>106 NW US Highway 24, Topeka, KS 66608</p>
+        </header>
+
+        <!-- Product Highlight -->
+        <section class="product-section">
             <h2>Discover Your New Home</h2>
-            <p>Own a brand-new 3-bed, 2-bath home for less than many renters expect. Experience the comfort of a stand-alone home with your own front and back yard, no shared walls, and a pet-friendly community.</p>
-        </section>
-
-        <!-- Home Details -->
-        <section>
-            <h3>The Home: $44,999</h3>
-            <ul>
-                <li>3 bedrooms, 2 full bathrooms</li>
-                <li>Approximately 869 square feet[cite: 1]</li>
-                <li>Upgraded structural materials and enhanced insulation for energy efficiency[cite: 1]</li>
+            <div class="price-tag">$44,999</div>
+            <p>Own a brand-new home for less than many renters expect. Get the space that traditional apartments do not offer: your own stand-alone home, your own private yard, and a pet-friendly community with outdoor green space.</p>
+            
+            <ul class="spec-list">
+                <li>3 Bedrooms</li>
+                <li>2 Full Bathrooms</li>
+                <li>~869 Square Feet</li>
+                <li>66' x 14' Single-Wide</li>
             </ul>
-            <p><strong>Special Offer:</strong> 3 months free lot rent with purchase of new manufactured home ($1,650 value)[cite: 1].</p>
+
+            <p style="background: #ebf8ff; padding: 15px; border-left: 4px solid #3182ce; margin-top: 20px;">
+                <strong>Special Incentive:</strong> 3 months of free lot rent included with the purchase of a new home ($1,650 total value).
+            </p>
         </section>
 
-        <!-- Comparison -->
-        <section>
-            <h3>Living Comparison</h3>
-            <table class="comparison-table">
-                <tr>
-                    <th>Feature</th>
-                    <th>Typical Apartment</th>
-                    <th>Regis MHC Home</th>
-                </tr>
-                <tr>
-                    <td>Ownership</td>
-                    <td>Renting (no equity)</td>
-                    <td><strong>Own your home</strong></td>
-                </tr>
-                <tr>
-                    <td>Privacy</td>
-                    <td>Shared walls</td>
-                    <td><strong>No shared walls</strong></td>
-                </tr>
-                <tr>
-                    <td>Outdoor Space</td>
-                    <td>Shared common areas</td>
-                    <td><strong>Private Yard</strong></td>
-                </tr>
-            </table>
+        <!-- Core Financial / Informational Content -->
+        <section class="info-block">
+            <h3>Value & Specifications</h3>
+            <p>This home features upgraded structural components and enhanced insulation packages for year-round durability, environmental comfort, and utility efficiency. Financing this asset through specialized third-party institutions replaces upfront purchase costs with structured monthly installments.</p>
+            
+            <p>For a significant portion of buyers, monthly obligations align symmetrically with—or fall below—local market rental rates for multi-bedroom apartments. The primary distinction rests in equity building: upon relocation, the asset can be sold to recover accumulated equity value.</p>
+            
+            <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0;">
+            
+            <p><strong>Fixed Monthly Costs & Community Guidelines:</strong></p>
+            <ul>
+                <li><strong>Lot Rent:</strong> $550/month (independent of home financing structures).</li>
+                <li><strong>Lease Configuration:</strong> Flexible Month-to-Month lot tenancy.</li>
+                <li><strong>Community Admission:</strong> Residency status remains strictly contingent upon standard background screening and park application approval.</li>
+                <li><strong>Utilities:</strong> Homeowner holds direct responsibility for individual utility meters (electricity, water, sewer).</li>
+            </ul>
         </section>
 
-        <!-- Financing -->
-        <section>
-            <h3>Financing Your Future</h3>
-            <p>We work with lenders like 21st Mortgage (NMLS #2280) to offer various credit profile programs, including low down payment options[cite: 1].</p>
-            <a href="https://www.21stmortgage.com/web/payment-estimator.nsf/c1.html" class="cta-button">Estimate Monthly Payments</a>
-            <a href="https://apply.21stmortgage.com/?sretId=3897-701" class="cta-button">Financing Application</a>
+        <!-- The Clean Step 1 / Step 2 Interface -->
+        <section class="action-steps">
+            <h2>Financing & Next Steps</h2>
+            <div class="steps-grid">
+                
+                <!-- Step 1 Card -->
+                <div class="step-card">
+                    <div>
+                        <div class="step-number">Step 1</div>
+                        <h3>Payment Estimator</h3>
+                        <p style="font-size: 14px; color: #4a5568; text-align: left; margin-bottom: 20px;">
+                            Utilize the standard calculator to evaluate potential monthly loan installments based on your target financing profile. Note: Estimates exclude separate lot costs, local taxes, or active insurance policies.
+                        </p>
+                    </div>
+                    <a href="https://www.21stmortgage.com/web/payment-estimator.nsf/c1.html" target="_blank" class="action-button">Estimate Payments</a>
+                </div>
+
+                <!-- Step 2 Card -->
+                <div class="step-card">
+                    <div>
+                        <div class="step-number">Step 2</div>
+                        <h3>Financing Application</h3>
+                        <p style="font-size: 14px; color: #4a5568; text-align: left; margin-bottom: 20px;">
+                            Submit your formal pre-qualification application directly to 21st Mortgage (NMLS #2280). Programs cater to diverse credit profiles, including low down-payment options for qualified applicants.
+                        </p>
+                    </div>
+                    <a href="https://apply.21stmortgage.com/?sretId=3897-701" target="_blank" class="action-button">Apply For Financing</a>
+                </div>
+
+            </div>
         </section>
 
-        <!-- Footer Contact -->
+        <!-- Regulatory & Informational Footer -->
         <footer>
-            <p><strong>Regis MHC</strong><br>
-            106 NW US Highway 24, Topeka, KS 66608[cite: 1]<br>
-            Phone/text: (785) 496-4322 | Email: info@regismhc.com[cite: 1]</p>
-            <p><em>Equal Housing Opportunity. This community complies with the Federal Fair Housing Act.</em>[cite: 1]</p>
+            <p><strong>Regis Manufactured Home Community</strong> &copy; 2026. All Rights Reserved.</p>
+            <p style="font-weight: 600; color: #4a5568;">Equal Housing Opportunity</p>
+            <p>This community strictly complies with the Federal Fair Housing Act. All qualified applicants are processed without regard to race, color, religion, sex, handicap, familial status, or national origin.</p>
         </footer>
+
     </div>
 
 </body>
