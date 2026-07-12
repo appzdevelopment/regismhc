@@ -75,40 +75,42 @@
         }
         .how-it-works > h2 {
             color: var(--color-heading);
-            margin: 0 0 12px 0;
+            margin: 0 0 32px 0;
             font-size: 1.625rem;
             text-align: center;
         }
-        .how-it-works-lead {
-            text-align: center;
-            color: var(--color-muted);
-            font-size: 1.0625rem;
-            margin: 0 0 48px 0;
+        .step-box {
+            background: #fafcf8;
+            border: 1px solid #dde8d6;
+            border-radius: 12px;
+            padding: 28px 32px;
         }
-        .process-step {
-            padding: 40px 0;
-            border-top: 1px solid #dde8d6;
+        .step-box-full {
+            margin-bottom: 24px;
         }
-        .process-step:first-of-type {
-            border-top: none;
-            padding-top: 0;
+        .steps-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
         }
-        .process-step:last-of-type {
-            padding-bottom: 0;
-        }
-        .process-step h3 {
+        .step-box h3 {
             margin: 0 0 12px 0;
             color: var(--color-heading);
-            font-size: 1.25rem;
+            font-size: 1.125rem;
         }
-        .process-step > p {
-            font-size: 1.0625rem;
+        .step-box > p {
+            font-size: 1rem;
             color: var(--color-muted);
-            margin: 0 0 20px 0;
-            line-height: 1.85;
+            margin: 0 0 16px 0;
+            line-height: 1.7;
         }
-        .process-step .action-button {
-            max-width: 360px;
+        .step-box .action-button {
+            width: 100%;
+            max-width: none;
+            box-sizing: border-box;
+        }
+        .step-box .luxury-form {
+            max-width: 480px;
         }
 
         /* ── Top Navigation Bar ── */
@@ -295,17 +297,10 @@
         }
 
         /* ── Form (inside How It Works Step 1) ── */
-        .form-subtitle {
-            color: var(--color-muted);
-            font-size: 1.0625rem;
-            margin: 0 0 24px 0;
-            line-height: 1.85;
-        }
         .form-privacy {
-            margin-top: 16px;
-            font-size: 0.9375rem;
+            margin-top: 12px;
+            font-size: 0.875rem;
             color: var(--color-muted);
-            text-align: center;
         }
         .form-success,
         .form-error {
@@ -389,10 +384,9 @@
             background: #f3f8ef;
             border: 1px solid #d4e4cc;
             border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 24px;
+            padding: 16px;
+            margin-bottom: 16px;
             text-align: left;
-            max-width: 520px;
         }
         .cheat-sheet-title {
             font-size: 0.9375rem;
@@ -484,6 +478,12 @@
                 flex-direction: column;
                 gap: 20px;
             }
+            .steps-row {
+                grid-template-columns: 1fr;
+            }
+            .step-box {
+                padding: 24px 20px;
+            }
         }
     </style>
 </head>
@@ -549,16 +549,14 @@
 
         <section class="how-it-works">
             <h2>How It Works</h2>
-            <p class="how-it-works-lead">As easy as 1-2-3.</p>
 
-            <div class="process-step">
+            <div class="step-box step-box-full">
                 <div class="step-number">Step 1</div>
                 <h3>Get Started</h3>
-                <p class="form-subtitle">Start here — tell us how to reach you. Takes less than a minute. No obligation.</p>
 
                 <div id="form-success" class="form-success" hidden>
                     <h3>You're all set!</h3>
-                    <p>Thanks for reaching out. We'll be in touch shortly to discuss your options.</p>
+                    <p>Thanks for reaching out. We'll be in touch shortly.</p>
                 </div>
 
                 <form id="contact-form" action="https://formspree.io/f/mdarrdkk" method="POST" class="luxury-form">
@@ -567,13 +565,13 @@
                     </div>
 
                     <label for="full-name">Your Name</label>
-                    <input type="text" id="full-name" name="full-name" placeholder="Jane Smith" required autocomplete="name">
+                    <input type="text" id="full-name" name="full-name" required autocomplete="name">
 
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="(785) 555-1234" required autocomplete="tel">
+                    <input type="tel" id="phone" name="phone" required autocomplete="tel">
 
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="you@email.com" required autocomplete="email">
+                    <input type="email" id="email" name="email" required autocomplete="email">
 
                     <label for="credit-score">Credit Score Range <span style="font-weight: 400; color: #94a3b8;">(optional)</span></label>
                     <select id="credit-score" name="credit-score">
@@ -586,35 +584,34 @@
                     </select>
 
                     <button type="submit" class="action-button">Get Started</button>
-                    <p class="form-privacy">Your info stays private. We'll only use it to follow up about this manufactured home.</p>
                 </form>
             </div>
 
-            <div class="process-step">
-                <div class="step-number">Step 2</div>
-                <h3>Estimate Your Monthly Payments</h3>
-                <p>Use our payment calculator to estimate potential monthly payments.</p>
+            <div class="steps-row">
+                <div class="step-box">
+                    <div class="step-number">Step 2</div>
+                    <h3>Estimate Your Monthly Payments</h3>
 
-                <div class="cheat-sheet">
-                    <p class="cheat-sheet-title">Calculator Cheat Sheet</p>
-                    <dl>
-                        <dt>What is the purchase price?</dt>
-                        <dd>$44,999</dd>
-                        <dt>What type of home?</dt>
-                        <dd>A new home</dd>
-                        <dt>Where is your home going?</dt>
-                        <dd>66608</dd>
-                    </dl>
+                    <div class="cheat-sheet">
+                        <p class="cheat-sheet-title">Calculator Cheat Sheet</p>
+                        <dl>
+                            <dt>What is the purchase price?</dt>
+                            <dd>$44,999</dd>
+                            <dt>What type of home?</dt>
+                            <dd>A new home</dd>
+                            <dt>Where is your home going?</dt>
+                            <dd>66608</dd>
+                        </dl>
+                    </div>
+                    <a href="https://www.21stmortgage.com/web/payment-estimator.nsf/c1.html" target="_blank" class="action-button">Estimate Monthly Payments</a>
                 </div>
-                <a href="https://www.21stmortgage.com/web/payment-estimator.nsf/c1.html" target="_blank" class="action-button">Estimate Monthly Payments</a>
-            </div>
 
-            <div class="process-step">
-                <div class="step-number">Step 3</div>
-                <h3>Apply for Financing</h3>
-                <p>Submit a financing application with an independent lender to explore available financing options.</p>
-                <p>If approved, purchase your manufactured home and lease your homesite from the community.</p>
-                <a href="https://apply.21stmortgage.com/?sretId=3897-701" target="_blank" class="action-button">Apply For Financing</a>
+                <div class="step-box">
+                    <div class="step-number">Step 3</div>
+                    <h3>Apply for Financing</h3>
+                    <p>Submit an application with an independent lender. If approved, purchase your manufactured home and lease your homesite.</p>
+                    <a href="https://apply.21stmortgage.com/?sretId=3897-701" target="_blank" class="action-button">Apply For Financing</a>
+                </div>
             </div>
         </section>
 
@@ -651,7 +648,6 @@
             const button = form.querySelector('button[type="submit"]');
             const errorEl = document.getElementById('form-error');
             const successEl = document.getElementById('form-success');
-            const subtitle = document.querySelector('.form-subtitle');
 
             errorEl.hidden = true;
             button.disabled = true;
@@ -666,7 +662,6 @@
 
                 if (response.ok) {
                     form.hidden = true;
-                    if (subtitle) subtitle.hidden = true;
                     successEl.hidden = false;
                 } else {
                     throw new Error('Form submission failed');
