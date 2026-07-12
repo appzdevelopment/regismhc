@@ -85,32 +85,42 @@
             border-radius: 12px;
             padding: 28px 32px;
         }
-        .step-box-full {
-            margin-bottom: 24px;
-        }
         .steps-row {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 24px;
+            align-items: stretch;
+        }
+        .steps-row .step-box {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .step-box-full {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .step-box-full .luxury-form {
+            margin: 0 auto;
+            text-align: left;
         }
         .step-box h3 {
             margin: 0 0 12px 0;
             color: var(--color-heading);
             font-size: 1.125rem;
+            text-align: center;
         }
-        .step-box > p {
-            font-size: 1rem;
-            color: var(--color-muted);
-            margin: 0 0 16px 0;
-            line-height: 1.7;
+        .step-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
-        .step-box .action-button {
-            width: 100%;
-            max-width: none;
-            box-sizing: border-box;
+        .step-body > p {
+            margin: auto 0;
+            padding: 0 8px;
         }
-        .step-box .luxury-form {
-            max-width: 480px;
+        .steps-row .action-button {
+            margin-top: auto;
         }
 
         /* ── Top Navigation Bar ── */
@@ -228,10 +238,17 @@
             position: relative;
             z-index: 1;
             margin: 0 0 20px 0;
-            font-size: clamp(1.875rem, 4.5vw, 2.625rem);
+            font-size: clamp(1.75rem, 4vw, 2.375rem);
             font-weight: 900;
             color: #ffffff;
             text-shadow: 0 2px 12px rgba(42, 74, 53, 0.4);
+            line-height: 1.3;
+        }
+        .hero-banner h1 .hero-line-2 {
+            display: block;
+            font-size: 0.88em;
+            font-weight: 700;
+            margin-top: 0.35em;
         }
         .hero-banner p {
             position: relative;
@@ -414,12 +431,29 @@
             color: var(--color-heading);
         }
         .step-number {
-            font-size: 0.875rem;
+            font-size: 0.6875rem;
             font-weight: 700;
             color: var(--color-accent);
             text-transform: uppercase;
-            letter-spacing: 0.12em;
-            margin-bottom: 14px;
+            letter-spacing: 0.14em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .step-box > p,
+        .step-body > p {
+            font-size: 1rem;
+            color: var(--color-muted);
+            margin: 0;
+            line-height: 1.7;
+            text-align: center;
+        }
+        .step-box .action-button {
+            width: 100%;
+            max-width: none;
+            box-sizing: border-box;
+        }
+        .step-box .luxury-form {
+            max-width: 480px;
         }
         .action-button {
             display: inline-block;
@@ -498,7 +532,7 @@
 
         <!-- Banner Context -->
         <header class="hero-banner">
-            <h1>Own a Brand-New Manufactured Home with Monthly Financing Options</h1>
+            <h1>Own a Brand-New Manufactured Home<span class="hero-line-2">Monthly Financing Options</span></h1>
             <p>106 NW US Highway 24, Topeka, KS 66608</p>
         </header>
 
@@ -592,16 +626,18 @@
                     <div class="step-number">Step 2</div>
                     <h3>Estimate Your Monthly Payments</h3>
 
-                    <div class="cheat-sheet">
-                        <p class="cheat-sheet-title">Calculator Cheat Sheet</p>
-                        <dl>
-                            <dt>What is the purchase price?</dt>
-                            <dd>$44,999</dd>
-                            <dt>What type of home?</dt>
-                            <dd>A new home</dd>
-                            <dt>Where is your home going?</dt>
-                            <dd>66608</dd>
-                        </dl>
+                    <div class="step-body">
+                        <div class="cheat-sheet">
+                            <p class="cheat-sheet-title">Calculator Cheat Sheet</p>
+                            <dl>
+                                <dt>What is the purchase price?</dt>
+                                <dd>$44,999</dd>
+                                <dt>What type of home?</dt>
+                                <dd>A new home</dd>
+                                <dt>Where is your home going?</dt>
+                                <dd>66608</dd>
+                            </dl>
+                        </div>
                     </div>
                     <a href="https://www.21stmortgage.com/web/payment-estimator.nsf/c1.html" target="_blank" class="action-button">Estimate Monthly Payments</a>
                 </div>
@@ -609,7 +645,9 @@
                 <div class="step-box">
                     <div class="step-number">Step 3</div>
                     <h3>Apply for Financing</h3>
-                    <p>Submit an application with an independent lender. If approved, purchase your manufactured home and lease your homesite.</p>
+                    <div class="step-body">
+                        <p>Submit an application with an independent lender. If approved, purchase your manufactured home and lease your homesite.</p>
+                    </div>
                     <a href="https://apply.21stmortgage.com/?sretId=3897-701" target="_blank" class="action-button">Apply For Financing</a>
                 </div>
             </div>
