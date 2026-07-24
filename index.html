@@ -606,108 +606,6 @@
             font-family: inherit;
         }
 
-        /* ── Purchase resources (tucked estimator cheat sheet) ── */
-        .purchase-resources {
-            background: #f7faf5;
-            border: 1px solid #c5d4bc;
-            border-radius: 16px;
-            padding: 40px 36px;
-            margin-bottom: 48px;
-        }
-        .purchase-resources h2 {
-            margin: 0 0 10px 0;
-            font-size: 1.375rem;
-        }
-        .purchase-resources > .section-text {
-            margin-bottom: 1.5rem;
-        }
-        .cheat-sheet {
-            background: #ffffff;
-            border: 1px solid #d4e4cc;
-            border-radius: 12px;
-            padding: 24px 28px;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        .cheat-sheet-title {
-            font-size: 0.9375rem;
-            font-weight: 700;
-            color: var(--color-heading);
-            margin: 0 0 6px 0;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-        .cheat-sheet-lead {
-            margin: 0 0 18px 0;
-            font-size: 0.975rem;
-            color: var(--color-muted);
-            line-height: 1.7;
-        }
-        .cheat-sheet dl {
-            margin: 0 0 20px 0;
-        }
-        .cheat-sheet dt {
-            font-size: 0.9375rem;
-            color: var(--color-muted);
-            margin-top: 12px;
-        }
-        .cheat-sheet dt:first-child {
-            margin-top: 0;
-        }
-        .cheat-sheet dd {
-            margin: 6px 0 0 0;
-            font-size: 1.0625rem;
-            font-weight: 700;
-            color: var(--color-heading);
-        }
-        .cheat-sheet-note {
-            margin: 14px 0 0 0;
-            font-size: 0.9rem;
-            color: var(--color-muted);
-            line-height: 1.65;
-        }
-        .cheat-sheet-note strong {
-            color: var(--color-heading);
-        }
-        .financing-next {
-            border-top: 1px solid #d4e4cc;
-            padding-top: 24px;
-            margin-top: 4px;
-        }
-        .financing-next h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.125rem;
-        }
-        .financing-next p {
-            margin: 0 0 16px 0;
-            color: var(--color-muted);
-            font-size: 1rem;
-            line-height: 1.75;
-        }
-        .action-button-secondary {
-            display: inline-block;
-            background-color: transparent;
-            color: var(--color-heading);
-            padding: 14px 28px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            border-radius: 8px;
-            border: 2px solid var(--color-accent);
-            letter-spacing: 0.02em;
-            transition: background-color 0.2s ease, color 0.2s ease;
-        }
-        .action-button-secondary:hover {
-            background-color: var(--color-accent);
-            color: #ffffff;
-        }
-        .purchase-disclaimer {
-            margin: 20px 0 0 0;
-            font-size: 0.85rem;
-            color: var(--color-muted);
-            line-height: 1.7;
-        }
         .step-number {
             font-size: 0.6875rem;
             font-weight: 700;
@@ -824,13 +722,9 @@
             .info-block,
             .rent-credit,
             .ownership-faq,
-            .purchase-resources,
             .how-it-works,
             .contact-bar {
                 padding: 36px 24px;
-            }
-            .cheat-sheet {
-                padding: 20px;
             }
             .contact-details {
                 flex-direction: column;
@@ -928,35 +822,6 @@
             </ul>
         </section>
 
-        <section class="purchase-resources" aria-labelledby="purchase-resources-heading">
-            <h2 id="purchase-resources-heading">Thinking About Purchasing?</h2>
-            <p class="section-text">If you want to see what ownership numbers might look like, start with a payment estimate. No pressure — just the inputs you need.</p>
-
-            <div class="cheat-sheet">
-                <p class="cheat-sheet-title">Payment Estimator Cheat Sheet</p>
-                <p class="cheat-sheet-lead">Use these values on the 21st Mortgage payment estimator:</p>
-                <dl>
-                    <dt>What is the purchase price?</dt>
-                    <dd>$44,999</dd>
-                    <dt>What type of home?</dt>
-                    <dd>A new home</dd>
-                    <dt>Where is your home going?</dt>
-                    <dd>66608</dd>
-                </dl>
-                <a href="https://www.21stmortgage.com/web/payment-estimator.nsf/c1.html" target="_blank" rel="noopener noreferrer" class="action-button">Open Payment Estimator</a>
-                <p class="cheat-sheet-note"><strong>No credit pull.</strong> This estimator is for exploring a possible payment only. It does not check your credit.</p>
-            </div>
-
-            <div class="financing-next">
-                <h3>When you&rsquo;re ready to explore financing</h3>
-                <p>If the estimate looks promising and you want to take a next step, you can start a financing request with 21st Mortgage. This is optional — take your time, and ask us questions first if you prefer.</p>
-                <a href="https://apply.21stmortgage.com/?sretId=3897-701" target="_blank" rel="noopener noreferrer" class="action-button-secondary">Explore Financing Options</a>
-                <p class="cheat-sheet-note"><strong>Credit notice:</strong> Unlike the payment estimator above, starting a financing request may include a hard credit inquiry. That can appear on your credit report and may temporarily affect your credit score.</p>
-            </div>
-
-            <p class="purchase-disclaimer">Purchase price, financing availability, rates, and terms are set by third parties and are subject to change. The Rent Credit Program is separate from any financing and is not a loan. Any purchase or financing is subject to separate agreements and approvals, if applicable.</p>
-        </section>
-
         <!-- Core Financial / Informational Content -->
         <section class="info-block">
             <h3>Rental Details & Community Guidelines</h3>
@@ -1039,6 +904,7 @@
             <p style="font-weight: 600; color: #4a5568;">Equal Housing Opportunity</p>
             <p>We comply with all applicable federal, state, and local fair housing laws. All applications are evaluated using our standard screening criteria and applicable law. Reasonable accommodations and reasonable modifications are provided as required by applicable law.</p>
             <p style="margin-top: 20px;">Availability, rental rates, community policies, and program terms are subject to change without notice. This advertisement is for informational purposes only and does not constitute an offer or guarantee of housing, financing, or program eligibility.</p>
+            <p style="margin-top: 16px;"><a href="/financing.html" style="color: #64748b;">Optional financing resources</a></p>
             <p style="margin-top: 24px;">Offered by Justag MHC I LLC &middot; Dealer Number D-4261</p>
         </footer>
 
